@@ -1,0 +1,23 @@
+<h1>新しいイベントを作成</h1>
+<%= form_with model: @event, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+  <div>
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+  <div>
+    <%= form.submit '作成' %>
+  </div>
+<% end %>
+<%= link_to '戻る', events_path %>

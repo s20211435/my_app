@@ -1,0 +1,10 @@
+<h1>スケジュール一覧</h1>
+<%= link_to '新しいイベントを作成', new_event_path %>
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event.title, event_path(event) %>
+      <%= event.start_time %> - <%= event.end_time %>
+    </li>
+  <% end %>
+</ul>
