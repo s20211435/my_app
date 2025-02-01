@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 1
+  remind_at: 2025-02-02 03:53:54
+
+two:
+  event_id: 1
+  remind_at: 2025-02-02 03:53:54
