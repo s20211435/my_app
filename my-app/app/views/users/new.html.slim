@@ -1,0 +1,15 @@
+h1 新しいユーザーを作成
+= form_with model: @user, local: true do |form|
+  div
+    = form.label :name
+    = form.text_field :name
+  div
+    = form.label :email
+    = form.text_field :email
+
+  div
+    = form.label :password_digest
+    = form.password_field :password_digest
+  div
+    = form.submit '作成'
+= link_to '戻る', users_path

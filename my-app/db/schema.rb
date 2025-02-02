@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_01_185354) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_02_071745) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -18,6 +18,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_01_185354) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "reminders", force: :cascade do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_01_185354) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "events", "users"
   add_foreign_key "reminders", "events"
   add_foreign_key "task_tags", "tags"
   add_foreign_key "task_tags", "tasks"
