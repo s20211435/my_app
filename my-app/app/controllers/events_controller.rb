@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :set_user, only: [:new, :edit]
+
   def index
     @events = Event.all
   end
@@ -41,7 +43,11 @@ class EventsController < ApplicationController
 
   private
 
+  def set_user
+    @users = User.all
+  end
+
   def event_params
-    params.require(:event).permit(:title, :description, :start_time, :end_time)
+    params.require(:event).permit(:title, :description, :start_time, :end_time, :user_id)
   end
 end

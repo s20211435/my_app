@@ -13,5 +13,8 @@ h1 新しいイベントを作成
     = form.label :end_time
     = form.datetime_select :end_time
   div
+    = form.label :user_id
+    = form.collection_select :user_id, @users, :id, :name, prompt: 'ユーザーを選択'
+  div
     = form.submit '作成'
 = link_to '戻る', events_path
