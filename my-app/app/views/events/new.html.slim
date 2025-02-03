@@ -1,20 +1,3 @@
-h1 新しいイベントを作成
-= form_with model: @event, local: true do |form|
-  div
-    = form.label :title
-    = form.text_field :title
-  div
-    = form.label :description
-    = form.text_area :description
-  div
-    = form.label :start_time
-    = form.datetime_select :start_time
-  div
-    = form.label :end_time
-    = form.datetime_select :end_time
-  div
-    = form.label :user_id
-    = form.collection_select :user_id, @users, :id, :name, prompt: 'ユーザーを選択'
-  div
-    = form.submit '作成'
-= link_to '戻る', events_path
+h1.text-center 新しいイベントを作成
+
+= render 'form'
