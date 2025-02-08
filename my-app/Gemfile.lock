@@ -116,6 +116,7 @@ GEM
     et-orbi (1.2.11)
       tzinfo
     execjs (2.10.0)
+    ffi (1.17.1-aarch64-linux-gnu)
     ffi (1.17.1-x86_64-linux-gnu)
     font-awesome-sass (6.7.2)
       sassc (~> 2.0)
@@ -124,6 +125,9 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.29.3-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
     google-protobuf (4.29.3-x86_64-linux)
       bigdecimal
       rake (>= 13)
@@ -289,6 +293,8 @@ GEM
       rubocop-rails
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
+    sass-embedded (1.83.4-aarch64-linux-gnu)
+      google-protobuf (~> 4.29)
     sass-embedded (1.83.4-x86_64-linux-gnu)
       google-protobuf (~> 4.29)
     sassc (2.4.0)
