@@ -2,8 +2,9 @@ h1.text-center.mt-3 スケジュール一覧
 
 .row
   .col-9
+    = turbo_frame_tag 'event_form'
   .col-3
-    = link_to new_event_path, class: 'btn btn-primary' do
+    = link_to new_event_path, class: 'btn btn-primary', data: { turbo_frame: 'event_form' } do
       i.fa-solid.fa-plus-square.mx-1
       | 新規作成
 
@@ -24,7 +25,7 @@ h1.text-center.mt-3 スケジュール一覧
       .col-3
         = l(event.end_time, format: :default)
       .col-2.mb-3
-        = link_to edit_event_path(event), class: 'btn btn-primary' do
+        = link_to edit_event_path(event), class: 'btn btn-primary', data: { turbo_frame: 'event_form' } do
           i.fa-solid.fa-pen-to-square.mx-1
           | 編集
 
