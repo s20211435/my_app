@@ -1,0 +1,16 @@
+h1.text-center タスク
+
+.row
+  .col-9
+    = turbo_frame_tag 'task_form'
+  .col-3
+    = link_to new_task_path, class: 'btn btn-primary', data: { turbo_frame: 'task_form' } do
+      i.fa-solid.fa-plus-square.mx-1
+      | 新規作成
+
+.container.d-flex.justify-content-evenly
+  - ['高', '中', '低'].each do |priority|
+      .col-4
+        h2.text-center = priority
+        - @tasks.select { |task| task.priority == priority }.each do |task|
+          = render partial: 'task', locals: { task: task }

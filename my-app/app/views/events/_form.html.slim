@@ -1,27 +1,28 @@
-= form_with model: @event, local: true do |form|
-  .container
-    .row
-      .col-9
-        = form.label :title, 'タイトル'
-        = form.text_field :title, class: 'form-control'
-    .row
-      .col-9
-        = form.label :description, '説明'
-        = form.text_area :description, class: 'form-control'
-    .row.my-3
-      .col-9
-        = form.label :start_time, '開始時間'
-        = form.datetime_select :start_time, class: 'form-control'
-    .row.my-3
-      .col-9
-        = form.label :end_time, '終了時間'
-        = form.datetime_select :end_time, class: 'form-control'
-    .row
-      .col-9
-        = form.label :user_id, 'ユーザー'
-        = form.collection_select :user_id, @users, :id, :name, prompt: 'ユーザーを選択', class: 'form-control'
-    .row.pt-3
-      .col-2
-        = form.submit '保存', class: 'btn btn-success mx-3'
-      .col-2
-        = link_to '戻る', events_path, class: 'btn btn-primary'
+= turbo_frame_tag 'event_form' do
+  = form_with model: @event do |form|
+    .container
+      .row
+        .col-9
+          = form.label :title, 'タイトル'
+          = form.text_field :title, class: 'form-control'
+      .row
+        .col-9
+          = form.label :description, '説明'
+          = form.text_area :description, class: 'form-control'
+      .row.my-3
+        .col-9
+          = form.label :start_time, '開始時間'
+          = form.datetime_select :start_time, class: 'form-control'
+      .row.my-3
+        .col-9
+          = form.label :end_time, '終了時間'
+          = form.datetime_select :end_time, class: 'form-control'
+      .row
+        .col-9
+          = form.label :user_id, 'ユーザー'
+          = form.collection_select :user_id, @users, :id, :name, prompt: 'ユーザーを選択', class: 'form-control'
+      .row.pt-3
+        .col-2
+          = form.submit '保存', class: 'btn btn-success mx-3'
+        .col-2
+          = link_to '戻る', events_path, class: 'btn btn-primary'

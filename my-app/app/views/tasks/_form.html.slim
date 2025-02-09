@@ -1,0 +1,32 @@
+= turbo_frame_tag 'task_form' do
+  = form_with model: @task do |form|
+    .container
+      .row
+        .col-9
+          = form.label :title, 'タイトル'
+          = form.text_field :title, class: 'form-control'
+      .row
+        .col-9
+          = form.label :description, '説明'
+          = form.text_area :description, class: 'form-control'
+      .row
+        .col-9
+          = form.label :status, 'ステータス'
+          = form.select :status, options_for_select([['完了', '完了'], ['未完了', '未完了']], @task.status), {}, class: 'form-control'
+      .row
+        .col-9
+          = form.label :priority, '優先度'
+          = form.select :priority, options_for_select([['高', '高'], ['中', '中'], ['低', '低']], @task.priority), {}, class: 'form-control'
+      .row
+        .col-9
+          = form.label :due_date, '期限'
+          = form.datetime_select :due_date, class: 'form-control'
+      .row
+        .col-9
+          = form.label :user_id, 'ユーザー'
+          = form.collection_select :user_id, @users, :id, :name, prompt: 'ユーザーを選択', class: 'form-control'
+      .row.pt-3
+        .col-2
+          = form.submit '保存', class: 'btn btn-success mx-3'
+        .col-2
+          = link_to '戻る', tasks_path, class: 'btn btn-primary'
